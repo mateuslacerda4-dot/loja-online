@@ -9,6 +9,9 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f6f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -34,6 +37,7 @@ nav ul {
     justify-content: center;
     gap: 2rem;
     margin-top: 1.2rem;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -53,6 +57,7 @@ main {
     max-width: 1100px;
     margin: 2rem auto;
     padding: 0 1.5rem;
+    flex: 1;
 }
 
 section {
@@ -102,7 +107,7 @@ section h2 {
     color: #e65100;
 }
 
-button {
+button, .btn-carrinho {
     background: #1a73e8;
     color: white;
     border: none;
@@ -113,6 +118,19 @@ button {
     transition: background 0.3s;
 }
 
-button:hover {
+button:hover, .btn-carrinho:hover {
     background: #0d47a1;
+}
+
+footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
 }
