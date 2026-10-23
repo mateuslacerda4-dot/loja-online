@@ -16,6 +16,7 @@
                 <li><a href="#produtos">Produtos</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li><span id="carrinho-info">Carrinho: <strong id="contador">0</strong> itens</span></li>
             </ul>
         </nav>
     </header>
@@ -32,19 +33,19 @@
                 <h3>Smartphone XPro</h3>
                 <p>Ecrã AMOLED de 6.7", câmara de 108MP e bateria de longa duração.</p>
                 <p class="preco">499,99 €</p>
-                <button class="btn-carrinho">Adicionar ao Carrinho</button>
+                <button class="btn-carrinho" data-produto="Smartphone XPro">Adicionar ao Carrinho</button>
             </div>
             <div class="produto">
                 <h3>Auscultadores Wireless Pro</h3>
                 <p>Cancelamento de ruído ativo, até 30h de autonomia e som de alta qualidade.</p>
                 <p class="preco">149,99 €</p>
-                <button class="btn-carrinho">Adicionar ao Carrinho</button>
+                <button class="btn-carrinho" data-produto="Auscultadores Wireless Pro">Adicionar ao Carrinho</button>
             </div>
             <div class="produto">
                 <h3>Smartwatch FitTrack</h3>
                 <p>Monitorização de saúde, GPS integrado e resistência à água.</p>
                 <p class="preco">199,99 €</p>
-                <button class="btn-carrinho">Adicionar ao Carrinho</button>
+                <button class="btn-carrinho" data-produto="Smartwatch FitTrack">Adicionar ao Carrinho</button>
             </div>
         </section>
 
@@ -61,7 +62,22 @@
 
     <footer>
         <p>&copy; 2026 TechStore. Todos os direitos reservados.</p>
-        <p>Desenvolvido com HTML e CSS</p>
+        <p>Desenvolvido com HTML, CSS e JavaScript</p>
     </footer>
+
+    <script>
+        let contador = 0;
+        const botoes = document.querySelectorAll('.btn-carrinho');
+        const contadorEl = document.getElementById('contador');
+
+        botoes.forEach(botao => {
+            botao.addEventListener('click', function() {
+                contador++;
+                contadorEl.textContent = contador;
+                const nome = this.getAttribute('data-produto');
+                alert(nome + ' adicionado ao carrinho!');
+            });
+        });
+    </script>
 </body>
 </html>
